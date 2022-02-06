@@ -36,13 +36,15 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String showWelcome(ModelMap model, @RequestParam String email, @RequestParam String password) {
+//		String email = user.getEmail();
+//		String password = user.getPassword();
 		boolean isValidUser = service.validateUser(email, password);
 		if(!isValidUser) {
 			model.put("errorMessage", "Invalid Credentials!");
 			return "login";
 		}
-		User user = userRepository.findByEmail(email);
-		model.put("name", user.getName());
+		User user1 = userRepository.findByEmail(email);
+		model.put("email", user1.getEmail());
 		return "welcome";
 	}
 

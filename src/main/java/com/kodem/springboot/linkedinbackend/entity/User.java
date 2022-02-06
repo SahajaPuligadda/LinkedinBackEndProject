@@ -9,9 +9,9 @@ public class User {
     @Id
     @GeneratedValue
     private int id;
-
-    @Column(name = "name")
-    private String name;
+//
+//    @Column(name = "name")
+//    private String name;
 
     @Column(name = "email")
     private String email;
@@ -22,9 +22,9 @@ public class User {
     protected User() {
     }
 
-    public User(String name, String email, String password) {
+    public User(String email, String password) {
         super();
-        this.name = name;
+//        this.name = name;
         this.email = email;
         this.password = password;
     }
@@ -33,7 +33,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+//                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
@@ -47,13 +47,13 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
     public String getEmail() {
         return email;

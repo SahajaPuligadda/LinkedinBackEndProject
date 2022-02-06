@@ -37,10 +37,10 @@ public class UserCommandLineRunner implements CommandLineRunner {
 
 //        log.info("New user is created: " + user);
 
-        Optional<User> userWithIdOne = repository.findById(3);
-        log.info("User is retrieved: " + userWithIdOne);
-
-        List<User> users = repository.findAll();
-        log.info("All users: " + users);
+//        Optional<User> userWithIdOne = repository.findById(3);
+//        log.info("User is retrieved: " + userWithIdOne);
+//
+//        List<User> users = repository.findAll();
+//        log.info("All users: " + users);
     }
 }
