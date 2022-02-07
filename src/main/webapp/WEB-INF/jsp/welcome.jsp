@@ -2,7 +2,7 @@
 <%@include file="common/navigation.jspf"%>
 
 <div class="container">
-Welcome ${name} !!
+Welcome ${email} !!
     Logged in successfully!
 </div>
 

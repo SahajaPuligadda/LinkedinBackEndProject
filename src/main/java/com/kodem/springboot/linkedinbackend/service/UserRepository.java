@@ -3,11 +3,17 @@ package com.kodem.springboot.linkedinbackend.service;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UserRepository
         extends JpaRepository<User, Integer> {
     User findByEmail(String email);
     boolean existsUserByEmail(String email);
+    User findByEmailAndPassword(String email, String password);
+
+//    @Override
+//    <S extends User> S saveAndFlush(S entity);
+
+//    @Override
+//    <S extends User> S save(S entity);
 }
