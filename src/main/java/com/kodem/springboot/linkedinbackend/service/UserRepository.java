@@ -11,9 +11,4 @@ public interface UserRepository
     boolean existsUserByEmail(String email);
     User findByEmailAndPassword(String email, String password);
 
-//    @Override
-//    <S extends User> S saveAndFlush(S entity);
-
-//    @Override
-//    <S extends User> S save(S entity);
 }

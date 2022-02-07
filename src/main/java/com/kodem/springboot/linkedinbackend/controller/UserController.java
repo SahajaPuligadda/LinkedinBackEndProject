@@ -36,13 +36,16 @@ public class UserController {
 	@RequestMapping(value = "/login",
 			method = RequestMethod.POST)
 	@Transactional
-	public User toLogin(ModelMap model,
-							  @RequestBody User user
+	public User toLogin(@RequestBody User user
 							  ) throws Exception {
 		String email = user.getEmail();
 		String password = user.getPassword();
+		System.out.println(email);
+		System.out.println(password);
 		boolean isExistsUser = service.existsUser(email, password);
+		System.out.println(isExistsUser);
 		User output = service.verifyUser(email, password);
+		System.out.println("uc " + output);
 		if(!isExistsUser) {
 			throw new Exception("There is no account with this email. " +
 					"Register below!");
@@ -50,6 +53,7 @@ public class UserController {
 		else {
 			boolean isValidUser = service.validateUser(email,
 					password);
+			System.out.println("isvaliduser " + isValidUser);
 			if (!isValidUser) {
 				throw new Exception("Invalid Credentials!") ;
 			}
@@ -60,8 +64,7 @@ public class UserController {
 	@RequestMapping(value = "/register",
 			method = RequestMethod.POST)
 	@Transactional
-	public void toRegister(ModelMap model,
-						@RequestBody User user
+	public void toRegister(@RequestBody User user
 	) throws Exception {
 		String email = user.getEmail();
 		String password = user.getPassword();
@@ -77,9 +80,10 @@ public class UserController {
 		//return new_user;
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String showLogout(ModelMap model) {
-		model.put("errorMessage", "Logged out successfully!!");
-		return "redirect:/login";
-	}
+//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+//	public String showLogout(ModelMap model) {
+//		model.put("errorMessage", "Logged out successfully!!");
+//		return "redirect:/login";
+//	}
+
 }
