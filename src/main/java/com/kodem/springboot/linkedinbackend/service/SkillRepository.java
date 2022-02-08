@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface SkillRepository
         extends JpaRepository<Skill, Integer> {
     Skill[] findAllByUser(Optional<User> user);
+    boolean existsByUserAndSkillName(Optional<User> user,
+                                     String name);
+    Skill findByUserAndSkillName(User user, String name);
 }

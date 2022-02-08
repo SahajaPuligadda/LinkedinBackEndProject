@@ -1,9 +1,11 @@
 package com.kodem.springboot.linkedinbackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Optional;
 
 @Entity
 @Table(name = "skills")
@@ -16,6 +18,7 @@ public class Skill {
     @ManyToOne
     @JoinColumn(name = "uid", referencedColumnName="id")
     @JsonIgnore
+    @NotNull
     private User user;
 
     @Column(name = "skill_name")

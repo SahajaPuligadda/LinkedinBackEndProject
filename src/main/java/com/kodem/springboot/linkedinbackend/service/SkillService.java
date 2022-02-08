@@ -1,6 +1,5 @@
 package com.kodem.springboot.linkedinbackend.service;
 
-import com.kodem.springboot.linkedinbackend.entity.Profile;
 import com.kodem.springboot.linkedinbackend.entity.Skill;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,33 @@ public class SkillService {
         if(userRepository.existsById(id)) {
             Optional<User> user = userRepository.findById(id);
             return skillRepository.findAllByUser(user);
+        }
+        return null;
+    }
+
+    public Skill[] deleteSkill(int uid, int sid){
+        if(userRepository.existsById(uid)
+                && skillRepository.existsById(sid)) {
+            Optional<User> user = userRepository.findById(uid);
+            skillRepository.deleteById(sid);
+            return skillRepository.findAllByUser(user);
+        }
+        return null;
+    }
+
+    public Skill createSkill(int uid, String name){
+//        System.out.println("Skillexists : " +
+//                skillRepository.existsByUserAndSkillName(
+//                userRepository.findById(uid), name));
+        if(userRepository.existsById(uid) &&
+                !skillRepository.existsByUserAndSkillName(
+                        userRepository.findById(uid), name)) {
+            User user = userRepository.
+                    findById(uid).orElse(null);
+//            System.out.println("user: " + user);
+            Skill skill = new Skill(user, name);
+            skillRepository.save(skill);
+            return skillRepository.findByUserAndSkillName(user, name);
         }
         return null;
     }
