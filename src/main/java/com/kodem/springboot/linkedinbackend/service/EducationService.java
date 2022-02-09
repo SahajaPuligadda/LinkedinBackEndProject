@@ -1,8 +1,9 @@
 package com.kodem.springboot.linkedinbackend.service;
 
 import com.kodem.springboot.linkedinbackend.entity.Education;
-import com.kodem.springboot.linkedinbackend.entity.Skill;
 import com.kodem.springboot.linkedinbackend.entity.User;
+import com.kodem.springboot.linkedinbackend.repository.EducationRepository;
+import com.kodem.springboot.linkedinbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

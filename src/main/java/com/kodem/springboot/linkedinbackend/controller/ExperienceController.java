@@ -2,11 +2,8 @@ package com.kodem.springboot.linkedinbackend.controller;
 
 //import com.kodem.springboot.linkedinbackend.UserCommandLineRunner;
 
-import com.kodem.springboot.linkedinbackend.entity.Education;
 import com.kodem.springboot.linkedinbackend.entity.Experience;
-import com.kodem.springboot.linkedinbackend.service.EducationRepository;
-import com.kodem.springboot.linkedinbackend.service.EducationService;
-import com.kodem.springboot.linkedinbackend.service.ExperienceRepository;
+import com.kodem.springboot.linkedinbackend.repository.ExperienceRepository;
 import com.kodem.springboot.linkedinbackend.service.ExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

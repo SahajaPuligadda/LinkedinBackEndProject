@@ -1,4 +1,4 @@
-package com.kodem.springboot.linkedinbackend.service;
+package com.kodem.springboot.linkedinbackend.repository;
 
 import com.kodem.springboot.linkedinbackend.entity.Education;
 import com.kodem.springboot.linkedinbackend.entity.Experience;

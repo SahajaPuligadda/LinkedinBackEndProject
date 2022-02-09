@@ -3,10 +3,8 @@ package com.kodem.springboot.linkedinbackend.controller;
 //import com.kodem.springboot.linkedinbackend.UserCommandLineRunner;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import com.kodem.springboot.linkedinbackend.service.LoginService;
-import com.kodem.springboot.linkedinbackend.service.UserRepository;
+import com.kodem.springboot.linkedinbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;

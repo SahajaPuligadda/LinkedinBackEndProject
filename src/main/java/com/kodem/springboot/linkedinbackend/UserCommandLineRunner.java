@@ -1,15 +1,11 @@
 package com.kodem.springboot.linkedinbackend;
 
-import com.kodem.springboot.linkedinbackend.entity.User;
-import com.kodem.springboot.linkedinbackend.service.UserRepository;
+import com.kodem.springboot.linkedinbackend.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
-import java.util.Optional;
 
 @Component
 public class UserCommandLineRunner implements CommandLineRunner {

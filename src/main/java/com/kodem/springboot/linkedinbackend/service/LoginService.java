@@ -1,15 +1,11 @@
 package com.kodem.springboot.linkedinbackend.service;
 
-import com.kodem.springboot.linkedinbackend.entity.Education;
 import com.kodem.springboot.linkedinbackend.entity.Profile;
 import com.kodem.springboot.linkedinbackend.entity.User;
+import com.kodem.springboot.linkedinbackend.repository.ProfileRepository;
+import com.kodem.springboot.linkedinbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LoginService {
