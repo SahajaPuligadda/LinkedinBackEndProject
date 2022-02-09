@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface ProfileRepository
         extends JpaRepository<Profile, Integer> {
     Profile findByUser(Optional<User> user);
+
 }

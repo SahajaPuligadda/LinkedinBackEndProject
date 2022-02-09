@@ -25,4 +25,30 @@ public class ProfileService {
         }
         return null;
     }
+
+    public Profile updateAbout(int id, String about){
+        if(userRepository.existsById(id)) {
+            Optional<User> user = userRepository.findById(id);
+            Profile profile = profileRepository.findByUser(user);
+            profile.setAbout(about);
+            return profileRepository.findByUser(user);
+        }
+        return null;
+    }
+
+    public Profile updateBio(int id, String name, String tag,
+                             String workplace, String location,
+                             String dpPath) {
+        if(userRepository.existsById(id)) {
+            Optional<User> user = userRepository.findById(id);
+            Profile profile = profileRepository.findByUser(user);
+            profile.setName(name);
+            profile.setTagline(tag);
+            profile.setWorkplace(workplace);
+            profile.setLocation(location);
+            profile.setPhoto(dpPath);
+            return profileRepository.findByUser(user);
+        }
+        return null;
+    }
 }

@@ -40,8 +40,8 @@ public class Profile {
     }
 
     public Profile(User user, String name, String tagline,
-                   String location, String workplace,
-                   String about, String photo) {
+                   String workplace, String location,
+                   String photo, String about) {
         this.user = user;
         this.name = name;
         this.tagline = tagline;

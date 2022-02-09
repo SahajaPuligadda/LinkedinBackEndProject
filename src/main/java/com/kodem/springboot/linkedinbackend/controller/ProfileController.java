@@ -15,9 +15,6 @@ import javax.transaction.Transactional;
 public class ProfileController {
 
     @Autowired
-    private ProfileRepository profileRepository;
-
-    @Autowired
 	ProfileService profileService;
 
 	@RequestMapping(value = "/{uid}/about",
@@ -26,6 +23,32 @@ public class ProfileController {
 	public Profile displayProfile(@PathVariable int uid)
 			throws Exception {
 		return profileService.getProfile(uid);
+	}
+
+	@RequestMapping(value = "/{uid}/about/edit-about",
+			method = RequestMethod.PUT)
+	@Transactional
+	public Profile editAbout(@PathVariable int uid,
+							 @RequestBody Profile profile)
+			throws Exception {
+		String about = profile.getAbout();
+		return profileService.updateAbout(uid, about);
+	}
+
+	@RequestMapping(value = "/{uid}/about/edit-bio",
+			method = RequestMethod.PUT)
+	@Transactional
+	public Profile editBio(@PathVariable int uid,
+							 @RequestBody Profile profile)
+			throws Exception {
+		System.out.println("Profile Details: " + profile);
+		String name = profile.getName();
+		String tag = profile.getTagline();
+		String workplace = profile.getWorkplace();
+		String location = profile.getLocation();
+		String dpPath = profile.getPhoto();
+		return profileService.updateBio(uid, name, tag,
+				workplace, location, dpPath);
 	}
 
 }
