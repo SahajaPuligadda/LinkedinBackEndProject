@@ -1,9 +1,6 @@
 package com.kodem.springboot.linkedinbackend.controller;
 
-//import com.kodem.springboot.linkedinbackend.UserCommandLineRunner;
-
 import com.kodem.springboot.linkedinbackend.entity.Profile;
-import com.kodem.springboot.linkedinbackend.repository.ProfileRepository;
 import com.kodem.springboot.linkedinbackend.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

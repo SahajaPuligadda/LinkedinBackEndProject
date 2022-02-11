@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Optional;
 
 @Entity
 @Table(name = "skills")

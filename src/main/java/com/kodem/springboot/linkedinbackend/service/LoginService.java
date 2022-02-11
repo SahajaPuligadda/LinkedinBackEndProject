@@ -23,10 +23,7 @@ public class LoginService {
     }
 
     public boolean existsUser(String email, String password){
-        if(!userRepository.existsUserByEmail(email)){
-            return false;
-        }
-        return true;
+        return userRepository.existsUserByEmail(email);
     }
 
     public User verifyUser(String email, String password) {

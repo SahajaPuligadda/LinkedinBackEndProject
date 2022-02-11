@@ -1,6 +1,5 @@
 package com.kodem.springboot.linkedinbackend.repository;
 
-import com.kodem.springboot.linkedinbackend.entity.Education;
 import com.kodem.springboot.linkedinbackend.entity.Experience;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

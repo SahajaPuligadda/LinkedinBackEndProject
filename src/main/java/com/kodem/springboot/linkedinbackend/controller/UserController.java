@@ -1,9 +1,7 @@
 package com.kodem.springboot.linkedinbackend.controller;
 
-//import com.kodem.springboot.linkedinbackend.UserCommandLineRunner;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import com.kodem.springboot.linkedinbackend.service.LoginService;
-import com.kodem.springboot.linkedinbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,24 +10,8 @@ import javax.transaction.Transactional;
 
 @RestController
 public class UserController {
-
-    @Autowired
-    private UserRepository userRepository;
-
     @Autowired
     LoginService service;
-
-//    @GetMapping("/users")
-//    public String listAll(ModelMap model) {
-//        List<User> users = userRepository.findAll();
-//        model.addAttribute("listUsers", users);
-//        return "users";
-//    }
-
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public String showLoginPage() {
-//		return "login";
-//	}
 
 	@RequestMapping(value = "/login",
 			method = RequestMethod.POST)
@@ -73,15 +55,7 @@ public class UserController {
 		}
 		else {
 			new_user = service.createUser(email, password);
-			//throw new Exception(String.valueOf(new_user));
 		}
-		//return new_user;
 	}
-
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-//	public String showLogout(ModelMap model) {
-//		model.put("errorMessage", "Logged out successfully!!");
-//		return "redirect:/login";
-//	}
 
 }
