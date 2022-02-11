@@ -1,5 +1,6 @@
 package com.kodem.springboot.linkedinbackend.repository;
 
+import com.kodem.springboot.linkedinbackend.entity.Education;
 import com.kodem.springboot.linkedinbackend.entity.Skill;
 import com.kodem.springboot.linkedinbackend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,5 @@ public interface SkillRepository
     boolean existsByUserAndSkillName(Optional<User> user,
                                      String name);
     Skill findByUserAndSkillName(User user, String name);
+    Skill findByUserAndId(Optional<User> user, int id);
 }

@@ -15,9 +15,6 @@ import javax.transaction.Transactional;
 public class SkillController {
 
     @Autowired
-    private SkillRepository skillRepository;
-
-    @Autowired
 	SkillService skillService;
 
 	@RequestMapping(value = "/{uid}/skills",
@@ -49,6 +46,29 @@ public class SkillController {
 		if(createdSkill == null)
 			throw new Exception("Skill name already exists!");
 		return createdSkill;
+	}
+
+	@RequestMapping(value = "/{uid}/skills/{sid}",
+			method = RequestMethod.GET)
+	@Transactional
+	public Skill displaySkill(@PathVariable int uid,
+									  @PathVariable int sid)
+			throws Exception {
+		return skillService.getSkill(uid, sid);
+	}
+
+	@RequestMapping(value = "/{uid}/skills/{sid}/edit",
+			method = RequestMethod.PUT)
+	@Transactional
+	public Skill editSkill(@PathVariable int uid,
+								   @PathVariable int sid,
+								   @RequestBody Skill skill)
+			throws Exception {
+
+		System.out.println("Skill Details: " + skill);
+		String skillName = skill.getSkillName();
+
+		return skillService.updateSkill(uid, sid, skillName);
 	}
 
 }
