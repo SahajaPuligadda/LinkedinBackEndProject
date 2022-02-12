@@ -57,7 +57,7 @@ public class User {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-//                ", profile=" + profile +
+                ", profile=" + profile +
 //                ", educations=" + educations +
 //                ", experiences=" + experiences +
 //                ", skills=" + skills +

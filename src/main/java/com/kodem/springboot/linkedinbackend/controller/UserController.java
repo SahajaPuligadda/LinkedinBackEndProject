@@ -1,11 +1,13 @@
 package com.kodem.springboot.linkedinbackend.controller;
 
 import com.kodem.springboot.linkedinbackend.entity.User;
+import com.kodem.springboot.linkedinbackend.entity.UserRegister;
 import com.kodem.springboot.linkedinbackend.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import java.util.Dictionary;
 
 
 @RestController
@@ -44,8 +46,10 @@ public class UserController {
 	@RequestMapping(value = "/register",
 			method = RequestMethod.POST)
 	@Transactional
-	public void toRegister(@RequestBody User user
+	public void toRegister(@RequestBody UserRegister user
 	) throws Exception {
+//		System.out.println("userDetails: " + user);
+		String name = user.getName();
 		String email = user.getEmail();
 		String password = user.getPassword();
 		boolean isExistsUser = service.existsUser(email, password);
@@ -54,7 +58,7 @@ public class UserController {
 			throw new Exception("Account already exists!");
 		}
 		else {
-			new_user = service.createUser(email, password);
+			new_user = service.createUser(email, password, name);
 		}
 	}
 

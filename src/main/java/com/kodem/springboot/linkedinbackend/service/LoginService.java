@@ -30,11 +30,11 @@ public class LoginService {
         return userRepository.findByEmailAndPassword(email, password);
     }
 
-    public User createUser(String email, String password) {
+    public User createUser(String email, String password, String name) {
         User u = new User(email, password);
-        Profile p = new Profile(u, "", "",
-                "", "",
-                "https://www.clipartkey.com/mpngs/m/146-1461473_default-profile-picture-transparent.png",
+        Profile p = new Profile(u, name, "Enter HeadLine",
+                "Enter current workplace", "Enter current location",
+                "https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png",
                 "Hi!");
         User user = userRepository.save(u);
         profileRepository.save(p);
