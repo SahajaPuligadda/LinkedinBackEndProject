@@ -33,8 +33,9 @@ public class LoginService {
     public User createUser(String email, String password) {
         User u = new User(email, password);
         Profile p = new Profile(u, "", "",
-                "", "", "Hi!",
-                "https://www.clipartkey.com/mpngs/m/146-1461473_default-profile-picture-transparent.png");
+                "", "",
+                "https://www.clipartkey.com/mpngs/m/146-1461473_default-profile-picture-transparent.png",
+                "Hi!");
         User user = userRepository.save(u);
         profileRepository.save(p);
         return user;
