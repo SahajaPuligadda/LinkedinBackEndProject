@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import java.util.Dictionary;
 
 
 @RestController
@@ -48,7 +47,6 @@ public class UserController {
 	@Transactional
 	public void toRegister(@RequestBody UserRegister user
 	) throws Exception {
-//		System.out.println("userDetails: " + user);
 		String name = user.getName();
 		String email = user.getEmail();
 		String password = user.getPassword();

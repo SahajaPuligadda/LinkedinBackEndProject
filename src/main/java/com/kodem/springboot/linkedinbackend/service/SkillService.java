@@ -37,15 +37,11 @@ public class SkillService {
     }
 
     public Skill createSkill(int uid, String name){
-//        System.out.println("Skillexists : " +
-//                skillRepository.existsByUserAndSkillName(
-//                userRepository.findById(uid), name));
         if(userRepository.existsById(uid) &&
                 !skillRepository.existsByUserAndSkillName(
                         userRepository.findById(uid), name)) {
             User user = userRepository.
                     findById(uid).orElse(null);
-//            System.out.println("user: " + user);
             Skill skill = new Skill(user, name);
             skillRepository.save(skill);
             return skillRepository.findByUserAndSkillName(user, name);

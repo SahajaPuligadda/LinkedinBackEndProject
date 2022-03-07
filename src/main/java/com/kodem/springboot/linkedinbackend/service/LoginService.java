@@ -18,7 +18,6 @@ public class LoginService {
 
     public boolean validateUser(String email, String password){
         User user = userRepository.findByEmail(email);
-        //System.out.println(user);
         return user.getPassword().equals(password);
     }
 

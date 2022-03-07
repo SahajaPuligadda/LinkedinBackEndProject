@@ -55,7 +55,6 @@ public class Profile {
     public String toString() {
         return "Profile{" +
                 "id=" + id +
-//                ", user=" + user +
                 ", name='" + name + '\'' +
                 ", tagline='" + tagline + '\'' +
                 ", location='" + location + '\'' +

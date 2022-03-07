@@ -58,9 +58,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", profile=" + profile +
-//                ", educations=" + educations +
-//                ", experiences=" + experiences +
-//                ", skills=" + skills +
                 '}';
     }
 
@@ -76,47 +73,7 @@ public class User {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Profile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
-
-    public Set<Education> getEducations() {
-        return educations;
-    }
-
-    public void setEducations(Set<Education> educations) {
-        this.educations = educations;
-    }
-
-    public Set<Experience> getExperiences() {
-        return experiences;
-    }
-
-    public void setExperiences(Set<Experience> experiences) {
-        this.experiences = experiences;
-    }
-
-    public Set<Skill> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(Set<Skill> skills) {
-        this.skills = skills;
     }
 }
